@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Онлайн-магазин</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+<body>
+    <div id="header">
+        <a href="/">
+            <img src="EShop.png">
+        </a>
+        <input type="button" id="add-button" value="Добавить товар">
+    </div>
+
+    <div id="products-div">
+        
+    </div>
+
+    <div id="screen" style="display: none;"></div>
+    <div id="form-div" style="display: none;">
+        <form class="product-form"  action="/products" method="POST" enctype="multipart/form-data">
+            <input type="number" name="id" value="-1" style="display: none;" required>
+            <label for="title">Название</label>
+            <input type="text" name="title" required>
+            <label for="category">Категория</label>
+            <select name="category" required>
+                <option>Бытовая техника</option>
+                <option>Компьютерная техника</option>
+                <option>Мебель</option>
+            </select>
+            <label for="price">Цена</label>
+            <input type="number" name="price" value="0" step="0.01" required>
+            <label for="description">Описание</label>
+            <textarea id="desc-area" name="description"></textarea>
+            <label for="product-img">Изображение товара</label>
+            <img id="product-img" name="product-img" src="/images">
+            <div>
+                <input type="file" name="img" accept="image/*">
+                <input type="button" id="cancel-img" value="Отменить выбор">
+            </div>
+            <div>
+                <input type="checkbox" name="clear">
+                <label for="clear">Удалить текущее изображение</label>
+            </div>
+            <input type="submit" value="Добавить">
+        </form>
+
+        <div id="product-info" class="product-form" style="display: none;">
+            <h2 id="info-title">Название товара</h2>
+            <p id="info-category" style="margin: 0px;">Категория</p>
+            <img id="info-img" src="/images">
+            <div>
+                <p style="flex-grow: 1;">Цена</p>
+                <p id="info-price">0,00</p>
+            </div>
+            <p id="info-desc">Много букв Много букв Много букв Много букв 
+                Много букв Много букв Много букв Много букв 
+                Много букв Много букв Много букв Много букв 
+                Много букв </p>
+            <div>
+                <input id="edit-button" type="button" value="Редактировать" style="width: 50%;">
+                <input id="delete-button" type="button" value="Удалить" style="width: 50%;">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
